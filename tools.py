@@ -185,19 +185,19 @@ class DocumentEmbedder:
 
         if normalizer == 'l2':  # normalization by L2 norm
             self._naive_d2v_embedding = [
-                normalized(np.sum(self._w2v[tok] if tok in self._w2v else np.zeros(300) for tok in doc))
+                normalized(np.sum(self._w2v[tok] if tok in self._w2v else np.zeros(dim) for tok in doc))
                 for doc in self.docs.get_tokenized()
             ]
 
         elif normalizer == "mean":  # normalization by number of tokens
             self._naive_d2v_embedding = [
-                np.sum(self._w2v[tok] if tok in self._w2v else np.zeros(300) for tok in doc) / max(len(doc), 1)
+                np.sum(self._w2v[tok] if tok in self._w2v else np.zeros(dim) for tok in doc) / max(len(doc), 1)
                 for doc in self.docs.get_tokenized()
             ]
 
         else:  # not using normalization at all
             self._naive_d2v_embedding = [
-                np.sum(self._w2v[tok] if tok in self._w2v else np.zeros(300) for tok in doc)
+                np.sum(self._w2v[tok] if tok in self._w2v else np.zeros(dim) for tok in doc)
                 for doc in self.docs.get_tokenized()
             ]
 
