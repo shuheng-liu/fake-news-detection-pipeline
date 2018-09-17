@@ -9,6 +9,12 @@ from gensim.corpora import Dictionary
 from gensim.models import TfidfModel, Word2Vec, Doc2Vec, KeyedVectors
 from gensim.models.doc2vec import TaggedDocument
 
+# in case some packages are not properly installed
+nltk.download('gutenberg')
+nltk.download('reuters')
+nltk.download('stopwords')
+nltk.download("punkt")
+
 
 class DocumentSequence:
     def __init__(self, raw_docs, clean=False, sw=None, punct=None):
