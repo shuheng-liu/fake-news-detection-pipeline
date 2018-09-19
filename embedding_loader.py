@@ -18,7 +18,7 @@ class EmbeddingLoader:
                 item = pkl.load(f)
         except FileNotFoundError as e:
             print("unable to load {}, see stack trace below".format(path))
-            print("double check that you have the file save {}".format(path))
+            print("double check that you have the file saved {}".format(path))
             print(e)
             return None
 
