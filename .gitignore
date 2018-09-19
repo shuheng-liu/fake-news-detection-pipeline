@@ -1,0 +1,7 @@
+.idea/
+.floyd*
+__pycache__/
+*test.py
+*sh
+.DS_Store
+embeddings/
