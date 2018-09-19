@@ -24,6 +24,20 @@ class EmbeddingLoader:
 
         return item
 
+    @staticmethod
+    def get_onehot_filename(corpus="title", scorer="count", normalize=False):
+        return "{}-onehot(scorer={}{}).pkl".format(corpus, scorer, ", normalized" if normalize else "")
+
+    @staticmethod
+    def get_d2v_filename(corpus="title", vec_size=300, win_size=13, min_count=5, dm=False, epochs=100):
+        return "{}-d2v(vecsize={}, winsize={}, mincount={}, {}, epochs={}).pkl".format(
+            corpus, vec_size, win_size, min_count, "dm" if dm else "dbow", epochs
+        )
+
+    @staticmethod
+    def get_nd2v_filename(corpus="title", normalizer=None):
+        return "{}-nd2v(normalizer={}).pkl".format(corpus, normalizer)
+
     def get_onehot(self, corpus="title", scorer="count", normalize=False):
         """
         returns the onehot sum matrix
@@ -35,7 +49,8 @@ class EmbeddingLoader:
         assert corpus in ["title", "text"], "`corpus` must be either 'title' or 'text'"
         assert scorer in ["count", "tfidf"], "`scorer` must be either 'count' or 'tfidf'"
         assert isinstance(normalize, bool), "`normalize` must be a bool"
-        filename = "{}-onehot(scorer={}{}).pkl".format(corpus, scorer, ", normalized" if normalize else "")
+        # filename = "{}-onehot(scorer={}{}).pkl".format(corpus, scorer, ", normalized" if normalize else "")
+        filename = EmbeddingLoader.get_onehot_filename(corpus=corpus, scorer=scorer, normalize=normalize)
         return EmbeddingLoader.get_file(os.path.join(self.parent_dir, filename))
 
     def get_d2v(self, corpus="title", vec_size=300, win_size=13, min_count=5, dm=False, epochs=100):
@@ -50,9 +65,11 @@ class EmbeddingLoader:
         :return: numpy.ndarray, shape=(n_docs, n_dims), as the d2v embeddings matrix
         """
         assert corpus in ["title", "text"], "`corpus` must be either 'title' or 'text'"
-        filename = "{}-d2v(vecsize={}, winsize={}, mincount={}, {}, epochs={}).pkl".format(
-            corpus, vec_size, win_size, min_count, "dm" if dm else "dbow", epochs
-        )
+        # filename = "{}-d2v(vecsize={}, winsize={}, mincount={}, {}, epochs={}).pkl".format(
+        #     corpus, vec_size, win_size, min_count, "dm" if dm else "dbow", epochs
+        # )
+        filename = EmbeddingLoader.get_d2v_filename(corpus=corpus, vec_size=vec_size, win_size=win_size,
+                                                    min_count=min_count, dm=dm, epochs=epochs)
         return EmbeddingLoader.get_file(os.path.join(self.parent_dir, filename))
 
     def get_nd2v(self, corpus="title", normalizer=None):
@@ -64,7 +81,8 @@ class EmbeddingLoader:
         """
         assert corpus in ["title", "text"], "`corpus` must be either 'title' or 'text'"
         assert normalizer is None or normalizer in ["l2", "mean"], "`normalizer` must be 'l2', 'mean' or None"
-        filename = "{}-nd2v(normalizer={}).pkl".format(corpus, normalizer)
+        # filename = "{}-nd2v(normalizer={}).pkl".format(corpus, normalizer)
+        filename = EmbeddingLoader.get_nd2v_filename(corpus=corpus, normalizer=normalizer)
         return EmbeddingLoader.get_file(os.path.join(self.parent_dir, filename))
 
     def get_label(self):
