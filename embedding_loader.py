@@ -18,6 +18,7 @@ class EmbeddingLoader:
                 item = pkl.load(f)
         except FileNotFoundError as e:
             print("unable to load {}, see stack trace below".format(path))
+            print("double check that you have the file save {}".format(path))
             print(e)
             return None
 
@@ -65,6 +66,13 @@ class EmbeddingLoader:
         assert normalizer is None or normalizer in ["l2", "mean"], "`normalizer` must be 'l2', 'mean' or None"
         filename = "{}-nd2v(normalizer={}).pkl".format(corpus, normalizer)
         return EmbeddingLoader.get_file(os.path.join(self.parent_dir, filename))
+
+    def get_label(self):
+        """
+        returns the labels, if you have a 'label.pkl' nested under `self.parent_dir`
+        :return: numpy.ndarray, shape=(n_docs,), as the label vector (0 for REAL and 1 for FAKE)
+        """
+        return EmbeddingLoader.get_file(os.path.join(self.parent_dir, "label.pkl"))
 
 # if __name__ == '__main__':
 #     loader = EmbeddingLoader("embeddings/")
