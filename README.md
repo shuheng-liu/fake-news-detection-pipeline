@@ -27,3 +27,7 @@ For purpose of this project, we will be using `random_state=0` for each split.
 
 While grid/random searching for the best set of hyperparameters, a 75%-25% train-test-split is used. A 5-Fold 
 cross-validation is used in the training phase on the 75% samples.
+
+## Directory to push models
+There is a `model/` directory nested under the project. Please name your model as `model_name.py`, and place it under 
+the `model/` directory (e.g. `model/KNN.py`) before pushing to this repo. 
