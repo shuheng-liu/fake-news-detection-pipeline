@@ -8,7 +8,7 @@ param_dist = {
     "hidden_layer_sizes": sizes,
     "activation": ["logistic", "tanh", "relu"],
     "solver": ["lbfgs"],
-    "alpha": [0, 2e-5, 5e-5, 1e-4, 2e-4, 5e-4, 1e-3, 2e-3],
+    "alpha": [0, 1e-4, 1e-3, 1e-2],
     "random_state": [seed],
     "max_iter": [100, 200, 500],
 }
