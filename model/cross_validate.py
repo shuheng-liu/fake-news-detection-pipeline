@@ -36,7 +36,7 @@ if __name__ == '__main__':
     # uses python reflection to dynamically load model
     parser.add_argument("--classifier", required=True,
                         help="classifier to use, must be existent under model/, such as model/KNN.py")
-    parser.add_argument("--corpus", default="title", help="title or text")
+    parser.add_argument("--corpus", default="title", help="title, text, or concatenated")
     parser.add_argument("--embedding", default="d2v",
                         help="embeddings model to use, must be one of [d2v, nd2v, onehot], default is d2v")
     parser.add_argument("--n_iter", default=100, type=int, help="number of trials to run during cross-validation. "
