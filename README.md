@@ -17,6 +17,10 @@ tfidf, L2-normalized
 min_count:{5, 25, 50}, strategy: {DM, DBOW}, epochs: 100; all six combinations tried
 - [doc2vec text](https://www.floydhub.com/wish1104/projects/fake-news/22/output), window_size: 13, 
 min_count:{5, 25, 50}, strategy: {DM, DBOW}, epochs: 100; all six combinations tried
+- [doc2vec title](https://www.floydhub.com/wish1104/projects/fake-news/88/output), window_size: {13, 23}, min_count: 5, 
+strategy: DBOW, epochs: {200, 500}; all four combinations tried
+- [doc2vec text](https://www.floydhub.com/wish1104/projects/fake-news/88/output), window_size: {13. 23}, min_count: 5, 
+strategy: DBOW, epochs: {200, 500}; all four combinations tried
 
 ## Doing train-test split
 Specifying `random_state` in `sklearn.model_selection.train_test_split()` ensures same split on different datasets 
