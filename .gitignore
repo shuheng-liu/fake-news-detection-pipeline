@@ -6,3 +6,6 @@ __pycache__/
 .DS_Store
 embeddings/
 raw-text.csv
+fasttext-train.txt
+fasttext-test.txt
+visual/
