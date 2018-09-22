@@ -16,7 +16,7 @@ def visualize_embeddings(embedding_values, label_values, embedding_name="doc_vec
     """
     TENSORBOARD_ROOT = 'visual'  # home directory for running tensorboard server
     embedding_name.replace(" ", "")  # the `embedding_name` is later used as a tf.scope_name; it mustn't contain spaces
-    METADAT_PATH = os.path.join(TENSORBOARD_ROOT, 'metadata.tsv')  # place to save metadata
+    METADATA_PATH = os.path.join(TENSORBOARD_ROOT, 'metadata.tsv')  # place to save metadata
 
     assert isinstance(embedding_values, np.ndarray), "{} is not a npndarray".format(embedding_values)
     assert isinstance(label_values, np.ndarray), "{} is not a npndarray".format(label_values)
@@ -38,7 +38,7 @@ def visualize_embeddings(embedding_values, label_values, embedding_name="doc_vec
     print("currently setting metadata_path to {}. Due to tensorboard version reasons, if prompted 'metadata not found' "
           "when visiting tensorboard server page, please manually edit metadata_path in projector_config.pbtxt to {} "
           "or the absolute path for `metadata.tsv` and restart tensorboard".format(embedding.metadata_path,
-                                                                                   METADAT_PATH))
+                                                                                   METADATA_PATH))
     print("If your tensorboard version is 1.7.0, you probably should not worry about this")
 
     # call the following method to visualize embeddings
@@ -50,7 +50,7 @@ def visualize_embeddings(embedding_values, label_values, embedding_name="doc_vec
         saver.save(sess, os.path.join(TENSORBOARD_ROOT, "model.ckpt"), 1)
 
     # write metadata (i.e., labels) for emebddings; this is how tensorboard knows labels of different embeddings
-    with open(METADAT_PATH, 'w') as f:
+    with open(METADATA_PATH, 'w') as f:
         f.write("Index\tLabel\n")
         for index, label in enumerate(label_values):
             f.write("%d\t%d\n" % (index, label))
@@ -64,8 +64,10 @@ if __name__ == '__main__':
 
     loader = EmbeddingLoader("embeddings")
     visualize_embeddings(embedding_values=loader.get_d2v(corpus="text", win_size=23, dm=False, epochs=500),
+                         embedding_name="text",
                          label_values=loader.get_label(),
                          points_to_show=3000)
-    visualize_embeddings(embedding_values=loader.get_d2v(corpus="text", win_size=23, dm=False, epochs=500),
+    visualize_embeddings(embedding_values=loader.get_d2v(corpus="title", win_size=23, dm=False, epochs=500),
+                         embedding_name="title",
                          label_values=loader.get_label(),
                          points_to_show=3000)
