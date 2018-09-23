@@ -9,3 +9,5 @@ raw-text.csv
 fasttext-train.txt
 fasttext-test.txt
 visual/
+*numbers
+.ipynb_checkpoints/
