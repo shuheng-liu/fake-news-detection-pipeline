@@ -286,3 +286,9 @@ class DocumentEmbedder:
             self._set_naive_doc2vec(normalizer=normalizer)
 
         return self._naive_d2v_embedding
+
+    def get_tfidf_score(self):
+        if not hasattr(self, "_tfidf_score"):
+            self._set_tfidf()
+
+        return self._tfidf_score
