@@ -13,3 +13,4 @@ visual/
 .ipynb_checkpoints/
 fake_or_real_news.csv
 GoogleNews-vectors-negative300.bin
+pretrained/*
