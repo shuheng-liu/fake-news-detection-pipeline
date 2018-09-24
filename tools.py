@@ -8,6 +8,7 @@ from itertools import chain
 from gensim.corpora import Dictionary
 from gensim.models import TfidfModel, Word2Vec, Doc2Vec, KeyedVectors
 from gensim.models.doc2vec import TaggedDocument
+from scipy.sparse import csr_matrix
 
 # in case some packages are not properly installed
 nltk.download('gutenberg')
@@ -177,8 +178,7 @@ class DocumentEmbedder:
         self._d2v.train(self.docs.get_tagged(), total_examples=self._d2v.corpus_count, epochs=epochs)
 
         # list document embeddings by order of their tags
-        self._d2v_embedding = [self._d2v.docvecs[index]
-                               for index in range(len(self.docs.get_tagged()))]
+        self._d2v_embedding = np.stack(self._d2v.docvecs[index] for index in range(len(self.docs.get_tagged())))
 
     def _set_naive_doc2vec(self, normalizer='l2'):
         if not hasattr(self, '_w2v'):  # load pretrained word2vec lazily
@@ -207,6 +207,11 @@ class DocumentEmbedder:
                 for doc in self.docs.get_tokenized()
             ]
 
+        # convert list of naive doc2vec embeddings into numpy.ndarray
+        self._naive_d2v_embedding = \
+            np.stack(emb if isinstance(emb, np.ndarray) and emb.shape[0] == dim else np.zeros(dim)
+                     for emb in self._naive_d2v_embedding)
+
     def _set_tfidf(self):
         self._tfidf = TfidfModel(corpus=self.docs.get_bow())
         self._tfidf_score = [[(index, score) for index, score in self._tfidf[doc]] for doc in self.docs.get_bow()]
@@ -229,6 +234,9 @@ class DocumentEmbedder:
             print("scorer not specified, using raw count")
             self._onehot_embedding = [np.sum(get_onehot_arr(word_id, dim, word_count) for word_id, word_count in doc)
                                       for doc in self.docs.get_bow()]
+
+        # convert list of one-hot SUM vectors into sparse matrix
+        self._onehot_embedding = csr_matrix(np.stack(self._onehot_embedding))
 
     # TODO implement setter and getter for fastText
     def _fast_text(self):
