@@ -4,7 +4,7 @@ import tensorflow as tf
 from tensorflow.contrib.tensorboard.plugins import projector
 
 
-def visualize_embeddings(embedding_values, label_values, embedding_name="doc_vec", points_to_show=None):
+def visualize_embeddings(embedding_values, label_values, embedding_name="doc_vec", texts=None, points_to_show=None):
     """
     function for visualize embeddings with tensorboard.
     MUST run in command line "tensorboard --logdir visual/" and visit localhost:6006 to see the visualization
@@ -25,6 +25,8 @@ def visualize_embeddings(embedding_values, label_values, embedding_name="doc_vec
         points_to_show = min(points_to_show, len(embedding_values), len(label_values))
         embedding_values = embedding_values[:points_to_show]
         label_values = label_values[:points_to_show]
+        if texts is not None:
+            texts = texts[:points_to_show]
 
     embedding_var = tf.Variable(embedding_values, name=embedding_name)  # instantiate a tensor to hold embedding values
     summary_writer = tf.summary.FileWriter(TENSORBOARD_ROOT)  # instantiate a writer to write summaries
@@ -51,9 +53,13 @@ def visualize_embeddings(embedding_values, label_values, embedding_name="doc_vec
 
     # write metadata (i.e., labels) for emebddings; this is how tensorboard knows labels of different embeddings
     with open(METADATA_PATH, 'w') as f:
-        f.write("Index\tLabel\n")
-        for index, label in enumerate(label_values):
-            f.write("%d\t%d\n" % (index, label))
+        f.write("Index\tLabel{}\n".format("" if texts is None else "\ttexts"))
+        if texts is None:
+            for index, label in enumerate(label_values):
+                f.write("{}\t{}\n".format(index, label))
+        else:
+            for index, label_and_text in enumerate(zip(label_values, texts)):
+                f.write("{}\t{}\t{}\n".format(index, *label_and_text))
 
     print("Embeddings are available now. Please start your tensorboard server with commandline "
           "`tensorboard --logdir visual` and visit http://localhost:6006 to see the visualization")
@@ -61,12 +67,14 @@ def visualize_embeddings(embedding_values, label_values, embedding_name="doc_vec
 
 if __name__ == '__main__':
     from embedding_loader import EmbeddingLoader
+    import pandas as pd
 
     loader = EmbeddingLoader("embeddings")
     visualize_embeddings(embedding_values=loader.get_d2v(corpus="text", win_size=23, dm=False, epochs=500),
                          embedding_name="text",
                          label_values=loader.get_label(),
-                         points_to_show=3000)
+                         points_to_show=300,
+                         texts=pd.read_csv("fake_or_real_news.csv").title.values)
     visualize_embeddings(embedding_values=loader.get_d2v(corpus="title", win_size=23, dm=False, epochs=500),
                          embedding_name="title",
                          label_values=loader.get_label(),
