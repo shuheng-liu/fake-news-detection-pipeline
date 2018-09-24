@@ -22,7 +22,7 @@ class EmbeddingLoader:
             print("unable to load {}, see stack trace below".format(path))
             print("double check that you have the file saved {}".format(path))
             print(e)
-            return None
+            raise FileNotFoundError("{}".format(path))  # re-throw the error for catching
 
         return item
 
