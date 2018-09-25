@@ -2,7 +2,8 @@
 Group project materials for fake news detection at Hollis Lab, GEC Academy
 
 ## URL for different embeddings precomputed on cloud
-- [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings), see list below
+- [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings/5), see list 
+below
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/33/output), scorer: 
 raw-count
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/35/output), scorer: 
