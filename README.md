@@ -1,6 +1,9 @@
 # fake-news-group2-project
 Group project materials for fake news detection at Hollis Lab, GEC Academy
 
+# Preject Plan
+![a](resources/GEC%20Group%20Presentation.jpg)
+
 ## URL for different embeddings precomputed on cloud
 - [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings), see list below
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/33/output), scorer: 
