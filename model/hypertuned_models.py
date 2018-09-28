@@ -66,6 +66,8 @@ lg = LogisticRegression(C=7.374558791, class_weight=None, dual=False,
 # classifiers_list = [mlp, knn, qda, gdb, svc, gnb, rf]
 # classifiers_labels = ['MultiLayerPerceptron', 'KNeighbours', 'QuadraticDiscriminantAnalysis', 'GradientBoosting', 'SVC',
 #                       'GaussianNB', 'RandomForest']
+classifiers = [mlp, knn, qda, gdb, svc, gnb, rf, lg]
 
 if __name__ == '__main__':
-    print(lg)
+    for clf in classifiers:
+        print(clf)
