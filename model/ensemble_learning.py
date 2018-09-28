@@ -87,6 +87,7 @@ class EnsembleVoter:
         self.fitted = False
         self.voters = [Voter(*tup, y_train, y_test) for tup in zip(classifiers, Xs_train, Xs_test)]
         self.n_voters = len(self.voters)
+        self.weights = self._set_weights(weights)
         self.proba = None
         self.y_test = y_test
 
