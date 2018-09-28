@@ -87,7 +87,6 @@ class EnsembleVoter:
         self.fitted = False
         self.voters = [Voter(*tup, y_train, y_test) for tup in zip(classifiers, Xs_train, Xs_test)]
         self.n_voters = len(self.voters)
-        self.weights = self._set_weights(weights)
         self.proba = None
         self.y_test = y_test
 
@@ -145,6 +144,8 @@ if __name__ == '__main__':
     # Xs_train = [d2v_500_train, d2v_100_train, onehot_train]
     # Xs_test = [d2v_500_test, d2v_100_test, onehot_test]
 
-    ens_voter = EnsembleVoter(classifiers, Xs_train, Xs_test, labels_train, labels_test)
+    # the variable tentative_weights is used for voting
+    tentative_weights = [1, 1, 1, 1]
+    ens_voter = EnsembleVoter(classifiers, Xs_train, Xs_test, labels_train, labels_test, tentative_weights)
     ens_voter.fit()
     print("Test score of EnsembleVoter: ", ens_voter.score())
