@@ -99,7 +99,7 @@ if __name__ == '__main__':
         print(e)
         print("There is no such file, double check that you have a `model/{}.py`".format(opt.classifier))
         print("If you have checked and the problem persist, make sure to run this script from ROOTDIR instead of "
-              "ROOTDIR/model, your code should look like `python model/cross_validate.py ...`")
+              "ROOTDIR/model, your code should look like `python model/hypertune.py ...`")
         sys.exit(0)
 
     # get the model from the target file
