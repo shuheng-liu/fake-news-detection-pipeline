@@ -12,14 +12,14 @@ import numpy as np
 mlp = MLPClassifier(activation='relu', alpha=0.01, batch_size='auto', beta_1=0.8,
                     beta_2=0.9, early_stopping=False, epsilon=1e-08,
                     hidden_layer_sizes=(600, 300), learning_rate='constant',
-                    learning_rate_init=0.0001, max_iter=200, momentum=0.9,
+                    learning_rate_init=0.0001, max_iter=500, momentum=0.9,
                     nesterovs_momentum=True, power_t=0.5, random_state=0, shuffle=True,
                     solver='adam', tol=0.0001, validation_fraction=0.1, verbose=False,
                     warm_start=False)
 
 # KNN classifier
 knn = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='cosine',
-                           metric_params=None, n_jobs=1, n_neighbors=10, p=2,
+                           metric_params=None, n_jobs=-1, n_neighbors=10, p=2,
                            weights='distance')
 
 # QDA classifier
@@ -52,7 +52,7 @@ rf = RandomForestClassifier(bootstrap=False, class_weight=None,
                             max_leaf_nodes=None, min_impurity_decrease=0.0,
                             min_impurity_split=None, min_samples_leaf=9,
                             min_samples_split=6, min_weight_fraction_leaf=0.0,
-                            n_estimators=50, n_jobs=1, oob_score=False, random_state=None,
+                            n_estimators=50, n_jobs=-1, oob_score=False, random_state=None,
                             verbose=0, warm_start=False)
 
 # Logistic Regression classifier
