@@ -5,7 +5,7 @@ import matplotlib.gridspec as gridspec
 
 from sklearn.metrics import classification_report, f1_score
 from sklearn import model_selection
-from input_specific_model import InputSpecificModel as Voter
+from model.input_specific_model import InputSpecificModel as Voter
 
 import numpy as np
 
@@ -135,7 +135,7 @@ if __name__ == '__main__':
     labels = loader.get_label()
 
     d2v_500_train, d2v_500_test, d2v_100_train, d2v_100_test, onehot_train, onehot_test, labels_train, labels_test = \
-        train_test_split(d2v_500, d2v_100, onehot, labels, test_size=0.25, stratify=labels, random_state=0)
+        train_test_split(d2v_500, d2v_100, onehot, labels, test_size=0.25, stratify=labels, random_state=11)
 
     classifiers = [mlp, svc, qda, lg]
     Xs_train = [d2v_500_train, d2v_100_train, d2v_100_train, onehot_train]
