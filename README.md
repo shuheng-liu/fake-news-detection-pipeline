@@ -5,7 +5,7 @@ Group project materials for fake news detection at Hollis Lab, GEC Academy
 ![a](resources/GEC%20Group%20Presentation.jpg)
 
 ## URL for different embeddings precomputed on cloud
-- [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings), see list below
+- [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings/5), see list below
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/33/output), scorer: 
 raw-count
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/35/output), scorer: 
@@ -30,7 +30,7 @@ Specifying `random_state` in `sklearn.model_selection.train_test_split()` ensure
 (of the same length), and on different machines. 
 (See this [link](https://stackoverflow.com/questions/43095076/scikit-learn-train-test-split-can-i-ensure-same-splits-on-different-datasets)) 
 
-For purpose of this project, we will be using `random_state=0` for each split.
+For purpose of this project, we will be using `random_state=58` for each split.
 
 While grid/random searching for the best set of hyperparameters, a 75%-25% train-test-split is used. A 5-Fold 
 cross-validation is used in the training phase on the 75% samples.
