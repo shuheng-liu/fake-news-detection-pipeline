@@ -1,7 +1,7 @@
 # fake-news-group2-project
 Group project materials for fake news detection at Hollis Lab, GEC Academy
 
-# Preject Plan
+# Project Plan
 ![a](resources/GEC%20Group%20Presentation.jpg)
 
 ## URL for different embeddings precomputed on cloud
