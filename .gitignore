@@ -16,3 +16,4 @@ GoogleNews-vectors-negative300.bin
 pretrained/*
 *Shuheng Liu*
 model/ensemble_voter.pkl
+model/fasttext.py
