@@ -25,7 +25,8 @@ strategy: DBOW, epochs: {200, 500}; all four combinations tried
 - [doc2vec text](https://www.floydhub.com/wish1104/projects/fake-news/88/output), window_size: {13. 23}, min_count: 5, 
 strategy: DBOW, epochs: {200, 500}; all four combinations tried
 
-## [URL for hypertuning](https://www.floydhub.com/wish1104/projects/fake-news/jobs)
+## Hypyertuning Logs, Codes, and Stats
+The logs, codes, and stats of hypertuning all simple models (that is, excluding Ensemble model) can be found here.[link](https://www.floydhub.com/wish1104/projects/fake-news/jobs)
 
 ## Doing train-test split
 Specifying `random_state` in `sklearn.model_selection.train_test_split()` ensures same split on different datasets 
