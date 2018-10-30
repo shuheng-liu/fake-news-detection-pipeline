@@ -26,7 +26,7 @@ strategy: DBOW, epochs: {200, 500}; all four combinations tried
 strategy: DBOW, epochs: {200, 500}; all four combinations tried
 
 ## Hypyertuning Logs, Codes, and Stats
-The logs, codes, and stats of hypertuning all simple models (that is, excluding Ensemble model) can be found here.[link](https://www.floydhub.com/wish1104/projects/fake-news/jobs)
+The logs, codes, and stats of hypertuning all simple models (that is, excluding Ensemble model) can be found [here](https://www.floydhub.com/wish1104/projects/fake-news/jobs).
 
 ## Doing train-test split
 Specifying `random_state` in `sklearn.model_selection.train_test_split()` ensures same split on different datasets 
