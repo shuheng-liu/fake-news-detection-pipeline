@@ -228,11 +228,11 @@ Some screenshots of the tensorboard are shown below. We visuallize the embedding
 
 ### 2D visualization (red for fake, blue for real)
 
-![jpg](resources/T-SNE 2D.jpg)
+![jpg](resources/T-SNE-2D.jpg)
 
 ### 3D visualization (red for fake, blue for real)
 
-![jpg](resources/T-SNE 3D.jpg)
+![jpg](resources/T-SNE-3D.jpg)
 
 #### Visualizing bigram words statistics
 
