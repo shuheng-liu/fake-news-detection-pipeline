@@ -76,32 +76,6 @@ titles = DocumentSequence(raw_title, clean=True, sw=stopwords.words('english'), 
 df.head()
 ```
 
-    converting raw docs into tokens
-    cleaning up stopwords and punctuations
-    listing tagged documents in memory
-    
-    converting raw docs into tokens
-    cleaning up stopwords and punctuations
-    listing tagged documents in memory
-
-
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-    
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -156,8 +130,6 @@ df.head()
     </tr>
   </tbody>
 </table>
-</div>
-
 
 
 # Get embeddings
@@ -256,11 +228,11 @@ Some screenshots of the tensorboard are shown below. We visuallize the embedding
 
 ### 2D visualization (red for fake, blue for real)
 
-![a](resources/T-SNE 2D.jpg)
+![jpg](resources/T-SNE 2D.jpg)
 
 ### 3D visualization (red for fake, blue for real)
 
-![a](resources/T-SNE 3D.jpg)
+![jpg](resources/T-SNE 3D.jpg)
 
 #### Visualizing bigram words statistics
 
@@ -301,29 +273,17 @@ def plot_most_common_words(num_to_show,words_list,title = ""):
     plt.show()
 ```
 
-    converting raw docs into tokens
-    cleaning up stopwords and punctuations
-    all tokens to be skipped are: {'who', 'him', 'or', 'm', 'don', '#', '|', 'those', 'our', 'whom', '!', 'been', 'my', 'if', '(', '.', 'shan', "won't", '…', '）', 'o', "you'll", 'and', 'so', 'but', 're', 'this', '’', 'not', '{', '-', '（', '~', "that'll", 'now', 'll', "hadn't", 'she', 'just', '‘', 'his', 'no', 'hasn', 'from', 'do', 'did', 'you', "needn't", 'on', 'few', 'didn', 'any', '}', '》', 'before', 't', 'does', 'am', 'under', 'most', 'myself', 'them', 'for', 'than', 'her', '“', 'again', '\\', 'wasn', "weren't", 'which', 'more', 'doesn', '/', 'each', "should've", 'wouldn', "you'd", 'its', 'as', "isn't", "you've", '_', 'to', 'over', "she's", 'after', "shouldn't", '^', '&', '。', 'while', 'aren', 'can', "haven't", "didn't", '``', 'out', '@', 'that', '=', 'being', "doesn't", 'yours', '>', "it's", 'off', 'their', "couldn't", 'i', 'because', 'herself', 'down', 'above', 'own', 'haven', 'further', '%', 'nor', "you're", 'same', '，', 'then', 'below', 'isn', '×', '—', 'are', 'hers', '；', 'has', "wasn't", 's', 'itself', 'had', 'the', '+', 'doing', 'your', 'here', 'into', '[', 'ours', 'a', 'having', 'needn', '？', '】', 'couldn', 'very', ']', 'is', 'ain', 'me', 'we', 'themselves', 'in', 'yourself', 'should', 'mightn', '$', ')', ':', '～', "wouldn't", 'will', 'd', 'between', 'where', 'at', 'it', 'weren', '"', 'with', 'such', "mustn't", 'himself', ',', 'by', 'about', 'mustn', '●', '￥', '`', 'other', 'an', 'both', "mightn't", 've', 'ma', "'", 'won', '<', 'were', 'only', 'once', '！', '*', ';', 'what', 'y', "aren't", '《', 'until', 'some', "hasn't", 'against', 'there', 'all', 'shouldn', "don't", 'why', 'ourselves', 'yourselves', 'during', 'too', '”', 'these', 'how', 'when', 'of', 'up', '【', '：', 'be', 'hadn', '、', 'they', 'theirs', "shan't", '?', 'was', 'through', 'have', 'he'}
-    listing tagged documents in memory
-    converting raw docs into tokens
-    cleaning up stopwords and punctuations
-    all tokens to be skipped are: {'who', 'him', 'or', 'm', 'don', '#', '|', 'those', 'our', 'whom', '!', 'been', 'my', 'if', '(', '.', 'shan', "won't", '…', '）', 'o', "you'll", 'and', 'so', 'but', 're', 'this', '’', 'not', '{', '-', '（', '~', "that'll", 'now', 'll', "hadn't", 'she', 'just', '‘', 'his', 'no', 'hasn', 'from', 'do', 'did', 'you', "needn't", 'on', 'few', 'didn', 'any', '}', '》', 'before', 't', 'does', 'am', 'under', 'most', 'myself', 'them', 'for', 'than', 'her', '“', 'again', '\\', 'wasn', "weren't", 'which', 'more', 'doesn', '/', 'each', "should've", 'wouldn', "you'd", 'its', 'as', "isn't", "you've", '_', 'to', 'over', "she's", 'after', "shouldn't", '^', '&', '。', 'while', 'aren', 'can', "haven't", "didn't", '``', 'out', '@', 'that', '=', 'being', "doesn't", 'yours', '>', "it's", 'off', 'their', "couldn't", 'i', 'because', 'herself', 'down', 'above', 'own', 'haven', 'further', '%', 'nor', "you're", 'same', '，', 'then', 'below', 'isn', '×', '—', 'are', 'hers', '；', 'has', "wasn't", 's', 'itself', 'had', 'the', '+', 'doing', 'your', 'here', 'into', '[', 'ours', 'a', 'having', 'needn', '？', '】', 'couldn', 'very', ']', 'is', 'ain', 'me', 'we', 'themselves', 'in', 'yourself', 'should', 'mightn', '$', ')', ':', '～', "wouldn't", 'will', 'd', 'between', 'where', 'at', 'it', 'weren', '"', 'with', 'such', "mustn't", 'himself', ',', 'by', 'about', 'mustn', '●', '￥', '`', 'other', 'an', 'both', "mightn't", 've', 'ma', "'", 'won', '<', 'were', 'only', 'once', '！', '*', ';', 'what', 'y', "aren't", '《', 'until', 'some', "hasn't", 'against', 'there', 'all', 'shouldn', "don't", 'why', 'ourselves', 'yourselves', 'during', 'too', '”', 'these', 'how', 'when', 'of', 'up', '【', '：', 'be', 'hadn', '、', 'they', 'theirs', "shan't", '?', 'was', 'through', 'have', 'he'}
-    listing tagged documents in memory
-
 
 
 ```python
 plot_most_common_words(20, fake_words_all, "Fake News Most Frequent words")
+plot_most_common_words(20, real_words_all, "Real News Most Frequent words")
 ```
 
 
 ![png](output_15_0.png)
 
 
-
-```python
-plot_most_common_words(20, real_words_all, "Real News Most Frequent words")
-```
 
 
 ![png](output_16_0.png)
@@ -517,7 +477,7 @@ for model in classifiers_list:
 
 
 
-![a](resources/models_with_best_performance_updated2.jpg)
+![jpg](resources/models_with_best_performance_updated2.jpg)
 
 ### Ensemble learning in the experiment
 Besides, we used ensemble vote classifier to model the train data and try to obtain a better prediction from ensemble learning.
@@ -1035,7 +995,7 @@ print_wordcloud(df3,'REAL NEWS')
 ### Ensemble learning in the experiment
 Besides, we used ensemble vote classifier to model the train data and try to obtain a better prediction from ensemble learning.
 
-![a](resources/Ensemble-Voter.png)
+![png](resources/Ensemble-Voter.png)
 
 
 ```python
