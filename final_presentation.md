@@ -281,12 +281,12 @@ plot_most_common_words(20, real_words_all, "Real News Most Frequent words")
 ```
 
 
-![png](output_15_0.png)
+![png](resouces/output_15_0.png)
 
 
 
 
-![png](output_16_0.png)
+![png](resources/output_16_0.png)
 
 
 # Classification process
@@ -790,7 +790,7 @@ print_wordcloud(df2,'FAKE NEWS')
 ```
 
 
-![png](output_36_0.png)
+![png](resources/output_36_0.png)
 
 
 Words with inclination to predict 'REAL' news
@@ -989,7 +989,7 @@ print_wordcloud(df3,'REAL NEWS')
 ```
 
 
-![png](output_39_0.png)
+![png](resources/output_39_0.png)
 
 
 ### Ensemble learning in the experiment
