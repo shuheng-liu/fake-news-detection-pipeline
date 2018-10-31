@@ -281,7 +281,7 @@ plot_most_common_words(20, real_words_all, "Real News Most Frequent words")
 ```
 
 
-![png](resouces/output_15_0.png)
+![png](resources/output_15_0.png)
 
 
 
