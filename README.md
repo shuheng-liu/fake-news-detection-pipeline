@@ -2,22 +2,22 @@
 - [Fake News Detection Pipeline](#fake-news-detection-pipeline)
   * [Collaborators Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang ](#collaborators-shuheng-liu-qiaoyi-yin-yuyuan-fang)
   * [Project Plan](#project-plan)
-- [Notice for collaborators](#notice-for-collaborators)
-  * [Doing train-test split](#doing-train-test-split)
-  * [Directory to push models](#directory-to-push-models)
+- [Notice for Collaborators](#notice-for-collaborators)
+  * [Doing Train-Test Split](#doing-train-test-split)
+  * [Directory to Push Models](#directory-to-push-models)
 - [Downloadables](#downloadables)
   * [URL for Different Embeddings Precomputed on Cloud](#url-for-different-embeddings-precomputed-on-cloud)
   * [Hypyertuning Logs, Codes, and Stats](#hypyertuning-logs-codes-and-stats)
 - [Quick Walkthrough (Presentation)](#quick-walkthrough-presentation)
-  * [Infrastructure for embeddings](#infrastructure-for-embeddings)
+  * [Infrastructure for Embeddings](#infrastructure-for-embeddings)
   * [Embedding Computation](#embedding-computation)
     + [URLs](#urls)
   * [Embedding Visualization](#embedding-visualization)
     + [2D T-SNE](#2d-t-sne)
     + [3D T-SNE](#3d-t-sne)
-    + [Visualizing bigram words statistics](#visualizing-bigram-words-statistics)
+    + [Visualizing Bigram Statistics](#visualizing-bigram-statistics)
   * [Binary Classification](#binary-classification)
-    + [Train-Val-Test split](#train-val-test-split)
+    + [Train-Val-Test Split](#train-val-test-split)
     + [Hypertuned Classifiers](#hypertuned-classifiers)
     + [Histogram of CV/Test Scores](#histogram-of-cvtest-scores)
     + [TF-IDF](#tf-idf)
@@ -34,8 +34,8 @@ Group project materials for fake news detection at Hollis Lab, GEC Academy
 
 ![a](resources/GEC%20Group%20Presentation.jpg)
 
-# Notice for collaborators
-## Doing train-test split
+# Notice for Collaborators
+## Doing Train-Test Split
 Specifying `random_state` in `sklearn.model_selection.train_test_split()` ensures same split on different datasets 
 (of the same length), and on different machines. 
 (See this [link](https://stackoverflow.com/questions/43095076/scikit-learn-train-test-split-can-i-ensure-same-splits-on-different-datasets)) 
@@ -45,7 +45,7 @@ For purpose of this project, we will be using `random_state=58` for each split.
 While grid/random searching for the best set of hyperparameters, a 75%-25% train-test-split is used. A 5-Fold 
 cross-validation is used in the training phase on the 75% samples.
 
-## Directory to push models
+## Directory to Push Models
 There is a `model/` directory nested under the project. Please name your model as `model_name.py`, and place it under 
 the `model/` directory (e.g. `model/KNN.py`) before pushing to this repo. 
 
@@ -87,7 +87,7 @@ git checkout f7e1c41
 ```
 *Alternatively, visit [this link which takes you back in history](https://github.com/Johnny-Wish/fake-news-detection-pipeline/blob/f7e1c41c675d8c43a2d0039bcdf2558cdf6748ec/UCB%20Final%20Project.ipynb).*
 
-## Infrastructure for embeddings
+## Infrastructure for Embeddings
 
 The following classes `DocumentSequence` and `DocumentEmbedder` can be found in tools.py. We encapsulated different ways of computing embeddings (doc2vec, naive doc2vec, one-hot) and their choices of hyperparameters in these files. Below is a snapshot of these classes their methods.
 ```python
@@ -298,7 +298,7 @@ red for fake ones, blue for real ones
 
 ![jpg](resources/T-SNE-3D.jpg)
 
-### Visualizing bigram words statistics
+### Visualizing Bigram Statistics
 
 
 ```python
@@ -355,7 +355,7 @@ plot_most_common_words(20, real_words_all, "Real News Most Frequent words")
 
 ## Binary Classification
 
-### Train-Val-Test split
+### Train-Val-Test Split
 
 (with 75% of data for 5-fold Random CV, 25% for testing)
 
