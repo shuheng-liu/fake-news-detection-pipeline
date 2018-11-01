@@ -650,15 +650,10 @@ df2.head(30)
 
 
 
-
 <div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
 <table border="1" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr style="text-align: center;">
       <th></th>
       <th>importance</th>
       <th>word</th>
@@ -820,6 +815,7 @@ df2.head(30)
 
 
 
+
 ```python
 print_wordcloud(df2,'FAKE NEWS')
 ```
@@ -838,15 +834,10 @@ df3.tail(30)
 
 
 
-
 <div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
 <table border="1" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr style="text-align: center;">
       <th></th>
       <th>importance</th>
       <th>word</th>
@@ -1005,6 +996,7 @@ df3.tail(30)
     </tr>
   </tbody>
 </table>
+
 
 
 
