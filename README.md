@@ -50,8 +50,8 @@ There is a `model/` directory nested under the project. Please name your model a
 the `model/` directory (e.g. `model/KNN.py`) before pushing to this repo. 
 
 # Downloadables
+Before trying to reproduce our result, please know that pre-computed embeddings can be downloaded from the URLs below. Consider downloading them and storing them into the `pretrained/` folder under this repository, which will save a lot of time.
 ## URL for Different Embeddings Precomputed on Cloud
-Before trying to reproduce our result, please know that pre-computed embeddings can be downloaded from the URLs below. Consider downloading them and storing them into the pretrained/ folder under this repository, which will save a lot of time.
 - [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings/5), see list below
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/33/output), scorer: 
 raw-count
