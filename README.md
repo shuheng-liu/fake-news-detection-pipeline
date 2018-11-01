@@ -356,7 +356,7 @@ news_train, news_test, labels_train, labels_test = train_test_split(news_embeddi
                                                                     stratify=labels)
 ```
 
-#### Classifier score and comparement 
+#### Classifier scores
 We used RandomSearch on different datasets to get the best hyper-parameters.    
 The following exhibits every classifier with almost optimal parameters in our experiments.   
 The RandomSearch process is omitted.
