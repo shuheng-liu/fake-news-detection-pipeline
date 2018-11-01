@@ -26,7 +26,7 @@
 
 
 # Fake News Detection Pipeline
-## Collaborators Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang
+## Collaborators Shuheng Liu, Qiaoyi Yin, Yuyuan Fang
 
 Group project materials for fake news detection at Hollis Lab, GEC Academy
 
