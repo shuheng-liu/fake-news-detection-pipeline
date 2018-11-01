@@ -8,7 +8,7 @@
 - [Downloadables](#downloadables)
   * [URL for Different Embeddings Precomputed on Cloud](#url-for-different-embeddings-precomputed-on-cloud)
   * [Hypyertuning Logs, Codes, and Stats](#hypyertuning-logs--codes--and-stats)
-- [Quick Walkthrough Presentation](#quick-walkthrough)
+- [Quick Walkthrough (Presentation)](#quick-walkthrough--presentation-)
   * [Infrastructure for embeddings](#infrastructure-for-embeddings)
   * [Embedding Computation](#embedding-computation)
     + [URLs](#urls)
@@ -76,7 +76,7 @@ strategy: DBOW, epochs: {200, 500}; all four combinations tried
 The logs, codes, and stats of hypertuning all simple models (that is, excluding Ensemble model) can be found [here](https://www.floydhub.com/wish1104/projects/fake-news/jobs).
 
 
-# Quick Walkthrough 
+# Quick Walkthrough (Presentation)
 *Below is the final presentation, originally implemented in jupyter notebook. To see the original presentation file, checkout the following command in your terminal*
 
 ```bash
