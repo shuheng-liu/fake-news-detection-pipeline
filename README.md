@@ -1,4 +1,6 @@
 # Fake News Detection Pipeline
+## Group 2, Hollis Lab
+### Members: Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang
 
 Group project materials for fake news detection at Hollis Lab, GEC Academy
 
@@ -6,6 +8,22 @@ Group project materials for fake news detection at Hollis Lab, GEC Academy
 
 ![a](resources/GEC%20Group%20Presentation.jpg)
 
+# Notice for collaborators
+## Doing train-test split
+Specifying `random_state` in `sklearn.model_selection.train_test_split()` ensures same split on different datasets 
+(of the same length), and on different machines. 
+(See this [link](https://stackoverflow.com/questions/43095076/scikit-learn-train-test-split-can-i-ensure-same-splits-on-different-datasets)) 
+
+For purpose of this project, we will be using `random_state=58` for each split.
+
+While grid/random searching for the best set of hyperparameters, a 75%-25% train-test-split is used. A 5-Fold 
+cross-validation is used in the training phase on the 75% samples.
+
+## Directory to push models
+There is a `model/` directory nested under the project. Please name your model as `model_name.py`, and place it under 
+the `model/` directory (e.g. `model/KNN.py`) before pushing to this repo. 
+
+# Result Overview
 ## URL for different embeddings precomputed on cloud
 - [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings/5), see list below
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/33/output), scorer: 
@@ -30,26 +48,21 @@ strategy: DBOW, epochs: {200, 500}; all four combinations tried
 ## Hypyertuning Logs, Codes, and Stats
 The logs, codes, and stats of hypertuning all simple models (that is, excluding Ensemble model) can be found [here](https://www.floydhub.com/wish1104/projects/fake-news/jobs).
 
-## Doing train-test split
-Specifying `random_state` in `sklearn.model_selection.train_test_split()` ensures same split on different datasets 
-(of the same length), and on different machines. 
-(See this [link](https://stackoverflow.com/questions/43095076/scikit-learn-train-test-split-can-i-ensure-same-splits-on-different-datasets)) 
 
-For purpose of this project, we will be using `random_state=58` for each split.
+# Final Presentation
+*Below is the final presentation, originally implemented in jupyter notebook. To see the original presentation file, checkout the following command in your terminal*
+```bash
+git log --  "UCB Final Project.ipynb"
+```
+*or,*
+```bash
+git checkout f7e1c41
+```
+*alternatively, visit this [link which takes you back to history](https://github.com/Johnny-Wish/fake-news-detection-pipeline/blob/f7e1c41c675d8c43a2d0039bcdf2558cdf6748ec/UCB%20Final%20Project.ipynb)*
 
-While grid/random searching for the best set of hyperparameters, a 75%-25% train-test-split is used. A 5-Fold 
-cross-validation is used in the training phase on the 75% samples.
-
-## Directory to push models
-There is a `model/` directory nested under the project. Please name your model as `model_name.py`, and place it under 
-the `model/` directory (e.g. `model/KNN.py`) before pushing to this repo. 
-
-# Fake News Detection 
-## Group 2, Hollis Lab
-### Members: Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang
 ____
 
-# Getting Set Up
+## Getting Set Up
 
 ### Infrastructure for embeddings
 
@@ -177,7 +190,7 @@ df.head()
 </table>
 
 
-# Get embeddings
+## Compute embeddings
 ### Embeddings that we have:  (see README.md in our github repo)
 
 | Embeddings | Parameters Tried|
@@ -189,7 +202,7 @@ df.head()
 | Attention is all you need | To be implemented |
 | FastText | To be implemented |
 
-## URL for different embeddings precomputed on cloud
+### URL for different embeddings precomputed on cloud
 - [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings/5), see list below
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/33/output), scorer: 
 raw-count
@@ -334,7 +347,7 @@ plot_most_common_words(20, real_words_all, "Real News Most Frequent words")
 ![png](resources/output_16_0.png)
 
 
-# Classification process
+## Classification process
 
 ### For Doc2Vec:
 
@@ -614,7 +627,7 @@ lg = LogisticRegression(C=104.31438384172546, penalty = 'l2')
 # Using whole data set
 lg.fit(tfidf_matrix, labels)
 
-## map the coeffients with word and sort the coeffients
+# map the coeffients with word and sort the coeffients
 abs_features = []
 num_features = tfidf_matrix.shape[0]
 for i in range(num_features):
@@ -1037,7 +1050,7 @@ print_wordcloud(df3,'REAL NEWS')
 ![png](resources/output_39_0.png)
 
 
-### Ensemble learning in the experiment
+### Ensemble Learning 
 Besides, we used ensemble vote classifier to model the train data and try to obtain a better prediction from ensemble learning.
 
 ![png](resources/Ensemble-Voter.png)
