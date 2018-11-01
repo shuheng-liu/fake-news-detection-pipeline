@@ -1,6 +1,6 @@
 # Table of Contents
 - [Fake News Detection Pipeline](#fake-news-detection-pipeline)
-  * [Collaborators](#collaborators-shuheng-liu-qiaoyi-yin-yuyuan-fang)
+  * [Collaborators Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang ](#collaborators-shuheng-liu-qiaoyi-yin-yuyuan-fang)
   * [Project Plan](#project-plan)
 - [Notice for collaborators](#notice-for-collaborators)
   * [Doing train-test split](#doing-train-test-split)
@@ -26,7 +26,7 @@
 
 
 # Fake News Detection Pipeline
-## Collaborators: Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang
+## Collaborators Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang
 
 Group project materials for fake news detection at Hollis Lab, GEC Academy
 
