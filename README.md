@@ -57,7 +57,7 @@ git log --  "UCB Final Project.ipynb"
 ```bash
 git checkout f7e1c41
 ```
-*alternatively, visit [this link which takes you back to history](https://github.com/Johnny-Wish/fake-news-detection-pipeline/blob/f7e1c41c675d8c43a2d0039bcdf2558cdf6748ec/UCB%20Final%20Project.ipynb)*
+*Alternatively, visit [this link which takes you back in history](https://github.com/Johnny-Wish/fake-news-detection-pipeline/blob/f7e1c41c675d8c43a2d0039bcdf2558cdf6748ec/UCB%20Final%20Project.ipynb).*
 
 ____
 
