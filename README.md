@@ -367,7 +367,6 @@ from model.hypyertuned_models import mlp, knn, qda, gdb, svc, gnb, rf, lg
 from model.hypyertuned_models import classifiers as classifiers_list
 ```
 
-### Histogram of scores achieved by different classifiers
 We list the best-performing hyperparameters in the following chart.
 
 
@@ -450,7 +449,7 @@ for model in classifiers_list:
     avg / total      0.925     0.925     0.925      1584
 
 
-
+### Histogram of scores achieved by different classifiers
 ![jpg](resources/models_with_best_performance_updated2.jpg)
 
 ### Ensemble learning in the experiment
