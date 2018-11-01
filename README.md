@@ -1,6 +1,5 @@
 # Fake News Detection Pipeline
-## Group 2, Hollis Lab
-### Members: Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang
+## Collaborators: Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang
 
 Group project materials for fake news detection at Hollis Lab, GEC Academy
 
@@ -58,7 +57,7 @@ git log --  "UCB Final Project.ipynb"
 ```bash
 git checkout f7e1c41
 ```
-*alternatively, visit this [link which takes you back to history](https://github.com/Johnny-Wish/fake-news-detection-pipeline/blob/f7e1c41c675d8c43a2d0039bcdf2558cdf6748ec/UCB%20Final%20Project.ipynb)*
+*alternatively, visit [this link which takes you back to history](https://github.com/Johnny-Wish/fake-news-detection-pipeline/blob/f7e1c41c675d8c43a2d0039bcdf2558cdf6748ec/UCB%20Final%20Project.ipynb)*
 
 ____
 
@@ -668,15 +667,6 @@ df2.head(30)
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-    
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -838,8 +828,6 @@ df2.head(30)
     </tr>
   </tbody>
 </table>
-</div>
-
 
 
 
@@ -876,6 +864,7 @@ df3.tail(30)
         vertical-align: top;
     }
 </style>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1037,8 +1026,6 @@ df3.tail(30)
     </tr>
   </tbody>
 </table>
-</div>
-
 
 
 
@@ -1082,9 +1069,3 @@ print("Test score of EnsembleVoter: ", ens_voter.score())
     Test score of LogisticRegression: 0.9513888888888888
     Fittng aborted because all voters are fitted and not using refit=True
     Test score of EnsembleVoter:  0.963901203293
-
-
-
-```python
-
-```
