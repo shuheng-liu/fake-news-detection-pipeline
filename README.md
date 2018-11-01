@@ -1,3 +1,34 @@
+# Table of Contents
+- [Fake News Detection Pipeline](#fake-news-detection-pipeline)
+  * [Collaborators: Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang](#collaborators--shuheng-liu--qiaoyi-yin--yuyuan--fang)
+  * [Project Plan](#project-plan)
+- [Notice for collaborators](#notice-for-collaborators)
+  * [Doing train-test split](#doing-train-test-split)
+  * [Directory to push models](#directory-to-push-models)
+- [Downloadables](#downloadables)
+  * [URL for Different Embeddings Precomputed on Cloud](#url-for-different-embeddings-precomputed-on-cloud)
+  * [Hypyertuning Logs, Codes, and Stats](#hypyertuning-logs--codes--and-stats)
+- [Quick Walkthrough (Presentation)](#quick-walkthrough--presentation-)
+  * [Infrastructure for embeddings](#infrastructure-for-embeddings)
+  * [Embedding Computation](#embedding-computation)
+    + [URLs](#urls)
+  * [Embedding Visualization](#embedding-visualization)
+    + [2D T-SNE](#2d-t-sne)
+    + [3D T-SNE](#3d-t-sne)
+    + [Visualizing bigram words statistics](#visualizing-bigram-words-statistics)
+  * [Binary Classification](#binary-classification)
+    + [Train-Val-Test split](#train-val-test-split)
+    + [Hypertuned Classifiers](#hypertuned-classifiers)
+    + [Histogram of CV/Test Scores](#histogram-of-cv-test-scores)
+    + [TF-IDF](#tf-idf)
+    + [Feature Ranking with Logistic Coefficients](#feature-ranking-with-logistic-coefficients)
+    + [Ensemble Learning](#ensemble-learning)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 # Fake News Detection Pipeline
 ## Collaborators: Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang
 
@@ -22,8 +53,8 @@ cross-validation is used in the training phase on the 75% samples.
 There is a `model/` directory nested under the project. Please name your model as `model_name.py`, and place it under 
 the `model/` directory (e.g. `model/KNN.py`) before pushing to this repo. 
 
-# Result Overview
-## URL for different embeddings precomputed on cloud
+# Downloadables
+## URL for Different Embeddings Precomputed on Cloud
 - [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings/5), see list below
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/33/output), scorer: 
 raw-count
@@ -48,8 +79,9 @@ strategy: DBOW, epochs: {200, 500}; all four combinations tried
 The logs, codes, and stats of hypertuning all simple models (that is, excluding Ensemble model) can be found [here](https://www.floydhub.com/wish1104/projects/fake-news/jobs).
 
 
-# Final Presentation
+# Quick Walkthrough (Presentation)
 *Below is the final presentation, originally implemented in jupyter notebook. To see the original presentation file, checkout the following command in your terminal*
+
 ```bash
 git log --  "UCB Final Project.ipynb"
 ```
@@ -59,11 +91,7 @@ git checkout f7e1c41
 ```
 *Alternatively, visit [this link which takes you back in history](https://github.com/Johnny-Wish/fake-news-detection-pipeline/blob/f7e1c41c675d8c43a2d0039bcdf2558cdf6748ec/UCB%20Final%20Project.ipynb).*
 
-____
-
-## Getting Set Up
-
-### Infrastructure for embeddings
+## Infrastructure for embeddings
 
 The following classes `DocumentSequence` and `DocumentEmbedder` can be found in tools.py. We encapsulated different ways of computing embeddings (doc2vec, naive doc2vec, one-hot) and their choices of hyperparameters in these files. Below is a snapshot of these classes their methods.
 ```python
@@ -189,8 +217,8 @@ df.head()
 </table>
 
 
-## Compute embeddings
-### URL for different embeddings precomputed on cloud
+## Embedding Computation
+### URLs
 - [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings/5), see list below
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/33/output), scorer: 
 raw-count
@@ -239,7 +267,7 @@ except FileNotFoundError as e:
 
 ```
 
-## Visualizing the embeddings
+## Embedding Visualization
 
 
 ```python
@@ -250,20 +278,10 @@ from embedding_visualizer import visualize_embeddings
 visualize_embeddings(embedding_values=news_embeddings, label_values=labels, texts = raw_title)
 ```
 
-    WARNING:tensorflow:From /Users/liushuheng/anaconda/envs/py3.6/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/base.py:198: retry (from tensorflow.contrib.learn.python.learn.datasets.base) is deprecated and will be removed in a future version.
-    Instructions for updating:
-    Use the retry module or similar alternatives.
-    WARNING: potential error due to tensorboard version conflicts
-    currently setting metadata_path to metadata.tsv. Due to tensorboard version reasons, if prompted 'metadata not found' when visiting tensorboard server page, please manually edit metadata_path in projector_config.pbtxt to visual/metadata.tsv or the absolute path for `metadata.tsv` and restart tensorboard
-    If your tensorboard version is 1.7.0, you probably should not worry about this
-    Embeddings are available now. Please start your tensorboard server with commandline `tensorboard --logdir visual` and visit http://localhost:6006 to see the visualization
-
 
 
 ```python
 print("visit https://localhost:6006 to see the result")
-
-# !tensorboard --logdir visual/ 
 # ATTENTION: This cell must be manually stopped
 ```
 
@@ -272,15 +290,19 @@ print("visit https://localhost:6006 to see the result")
 
 Some screenshots of the tensorboard are shown below. We visuallize the embeddings of documents with T-SNE projection on 3D and 2D spaces. Each red data point indicates a piece of FAKE news, and each blue one indicates a piece of real news. These two categories are well-separated as can be seen from the visualization.
 
-### 2D visualization (red for fake, blue for real)
+### 2D T-SNE
+
+red for fake ones, blue for real ones
 
 ![jpg](resources/T-SNE-2D.jpg)
 
-### 3D visualization (red for fake, blue for real)
+### 3D T-SNE
+
+red for fake ones, blue for real ones
 
 ![jpg](resources/T-SNE-3D.jpg)
 
-#### Visualizing bigram words statistics
+### Visualizing bigram words statistics
 
 
 ```python
@@ -335,11 +357,11 @@ plot_most_common_words(20, real_words_all, "Real News Most Frequent words")
 ![png](resources/output_16_0.png)
 
 
-## Classification process
+## Binary Classification
 
-### For Doc2Vec:
+### Train-Val-Test split
 
-#### Split the dataset (with 75% of data for 5-fold Randomsearching, 25% for testing)
+(with 75% of data for 5-fold Random CV, 25% for testing)
 
 
 ```python
@@ -356,7 +378,8 @@ news_train, news_test, labels_train, labels_test = train_test_split(news_embeddi
                                                                     stratify=labels)
 ```
 
-#### Classifier scores
+### Hypertuned Classifiers
+
 We used RandomSearch on different datasets to get the best hyper-parameters.    
 The following exhibits every classifier with almost optimal parameters in our experiments.   
 The RandomSearch process is omitted.
@@ -449,13 +472,10 @@ for model in classifiers_list:
     avg / total      0.925     0.925     0.925      1584
 
 
-### Histogram of scores achieved by different classifiers
+### Histogram of CV/Test Scores
 ![jpg](resources/models_with_best_performance_updated2.jpg)
 
-### Ensemble learning in the experiment
-Besides, we used ensemble vote classifier to model the train data and try to obtain a better prediction from ensemble learning.
-
-### For TF-IDF:
+### TF-IDF
 Getting sparse matrix
 
 
@@ -532,7 +552,7 @@ for model in classifiers_list:
 
 
 
-#### Using coeffient to see what is important
+### Feature Ranking with Logistic Coefficients
 
 
 ```python
