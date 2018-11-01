@@ -190,17 +190,6 @@ df.head()
 
 
 ## Compute embeddings
-### Embeddings that we have:  (see README.md in our github repo)
-
-| Embeddings | Parameters Tried|
-| ------ | ------ |
-| Dov2Vec | Min_count = 5/25/50| Win_size = 13/23| DBOW/DM | epochs=100/200/500|
-| Naive D2V | Normalizer = L2/Mean/None |
-| One-Hot Sum |Rawcount/TF-IDF| Normalizer = L2/None |
-| Bigrams | TF-IDF |
-| Attention is all you need | To be implemented |
-| FastText | To be implemented |
-
 ### URL for different embeddings precomputed on cloud
 - [all computed embeddings and labels](https://www.floydhub.com/wish1104/datasets/fake-news-embeddings/5), see list below
 - [onehot title & text (sparse matrix)](https://www.floydhub.com/wish1104/projects/fake-news/33/output), scorer: 
