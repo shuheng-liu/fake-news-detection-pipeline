@@ -24,7 +24,6 @@
     + [Feature Ranking with Logistic Coefficients](#feature-ranking-with-logistic-coefficients)
     + [Ensemble Learning](#ensemble-learning)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 # Fake News Detection Pipeline
 ## Collaborators: Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang
