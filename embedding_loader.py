@@ -60,6 +60,8 @@ class EmbeddingLoader:
                 self.get_onehot("text", scorer=scorer, normalize=normalize)
             ])
 
+    onehot = property(get_onehot)
+
     def get_d2v(self, corpus="title", vec_size=300, win_size=13, min_count=5, dm=False, epochs=100):
         """
         returns the d2v embeddings matrix
@@ -82,6 +84,8 @@ class EmbeddingLoader:
                                    self.get_d2v("text", vec_size=vec_size, win_size=win_size, min_count=min_count,
                                                 dm=dm, epochs=epochs)), axis=1)
 
+    d2v = property(get_d2v)
+
     def get_nd2v(self, corpus="title", normalizer=None):
         """
         returns the naive d2v embeddings matrix
@@ -98,12 +102,16 @@ class EmbeddingLoader:
             return np.concatenate(
                 (self.get_nd2v("title", normalizer=normalizer), self.get_nd2v("text", normalizer=normalizer)), axis=1)
 
+    nd2v = property(get_nd2v)
+
     def get_label(self):
         """
         returns the labels, if you have a 'label.pkl' nested under `self.parent_dir`
         :return: numpy.ndarray, shape=(n_docs,), as the label vector (0 for REAL and 1 for FAKE)
         """
         return EmbeddingLoader.get_file(os.path.join(self.parent_dir, "label.pkl"))
+
+    label = property(get_label)
 
 
 if __name__ == '__main__':

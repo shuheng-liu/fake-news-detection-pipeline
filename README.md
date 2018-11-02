@@ -93,47 +93,34 @@ git checkout f7e1c41
 The following classes `DocumentSequence` and `DocumentEmbedder` can be found in tools.py. We encapsulated different ways of computing embeddings (doc2vec, naive doc2vec, one-hot) and their choices of hyperparameters in these files. Below is a snapshot of these classes their methods.
 ```python
 class DocumentSequence:
-    def __init__(self, raw_docs, clean=False, sw=None, punct=None): 
-        
-    def _set_tokenized(self, clean=False, sw=None, punct=None): 
-
-    def _set_tagged(self): 
-
-    def _set_dictionary(self):
-
-    def _set_bow(self):
-
-    def get_dictionary(self):
-
-    def get_tokenized(self):
-
-    def get_tagged(self):
-
-    def get_bow(self):
+    def __init__(self, raw_docs, clean=False, sw=None, punct=None): ...
+    # setters (only to be called internally)
+    def _set_tokenized(self, clean=False, sw=None, punct=None): ...
+    def _set_tagged(self): ...
+    def _set_dictionary(self): ...
+    def _set_bow(self): ...
+    # getters (exposed)
+    def get_dictionary(self): ...  # property field `dictionary` available
+    def get_tokenized(self): ...  # property field `tokenized` available
+    def get_tagged(self): ...  # property field `tagged` available
+    def get_bow(self): ...  # property field `bow` available
 ```
 
 ```python
 
 class DocumentEmbedder:
-    def __init__(self, docs: DocumentSequence, pretrained_word2vec=None):
-
-    def _set_word2vec(self):
-
-    def _set_doc2vec(self, vector_size=300, window=5, min_count=5, dm=1, epochs=20):
-
-    def _set_naive_doc2vec(self, normalizer='l2'):
-
-    def _set_tfidf(self):
-
-    def _set_onehot(self, scorer='tfidf'):
-
-    def get_onehot(self, scorer='tfidf'):
-
-    def get_doc2vec(self, vectors_size=300, window=5, min_count=5, dm=1, epochs=20):
-
-    def get_naive_doc2vec(self, normalizer='l2'):
-
-    def get_tfidf_score(self):
+    def __init__(self, docs: DocumentSequence, pretrained_word2vec=None): ...
+    # setters (only to be called internally)    
+    def _set_word2vec(self): ...
+    def _set_doc2vec(self, vector_size=300, window=5, min_count=5, dm=1, epochs=20): ...
+    def _set_naive_doc2vec(self, normalizer='l2'): ...
+    def _set_tfidf(self): ...
+    def _set_onehot(self, scorer='tfidf'): ...
+    # getters (exposed)
+    def get_onehot(self, scorer='tfidf'): ...  # property field `onehot` available
+    def get_doc2vec(self, vectors_size=300, window=5, min_count=5, dm=1, epochs=20): ... # property field doc2vec available
+    def get_naive_doc2vec(self, normalizer='l2'): ...  # property field `naive_doc2vec` available
+    def get_tfidf_score(self): ...  # property field `tfidf` available
 ```
 
 
