@@ -90,13 +90,19 @@ class DocumentSequence:
         # the previous method is only called once
         return self._dictionary
 
+    dictionary = property(get_dictionary)
+
     def get_tokenized(self):
         """getter for tokenized documents, cleaned as desired"""
         return self._tokenized
 
+    tokenized = property(get_tokenized)
+
     def get_tagged(self):
         """getter for list of TaggedDocuments"""
         return self._tagged
+
+    tagged = property(get_tagged)
 
     def get_bow(self):
         """getter for bag-of-words representation of documents"""
@@ -105,6 +111,8 @@ class DocumentSequence:
 
         # the previous method is only called once
         return self._bow
+
+    bow = property(get_bow)
 
 
 def normalized(arr):
@@ -261,6 +269,8 @@ class DocumentEmbedder:
 
         return self._onehot_embedding
 
+    onehot = property(get_onehot)
+
     def get_doc2vec(self, vectors_size=300, window=5, min_count=5, dm=1, epochs=20):
         """
         get the doc2vec embeddings with word vectors pretrained on GoogleNews task
@@ -281,6 +291,8 @@ class DocumentEmbedder:
 
         return self._d2v_embedding
 
+    doc2vec = property(get_doc2vec)
+
     def get_naive_doc2vec(self, normalizer='l2'):
         """
         get the naive doc2vec embeddings, which is obtained from summing word vectors and normalizing by a metric
@@ -295,8 +307,12 @@ class DocumentEmbedder:
 
         return self._naive_d2v_embedding
 
+    naive_doc2vec = property(get_naive_doc2vec)
+
     def get_tfidf_score(self):
         if not hasattr(self, "_tfidf_score"):
             self._set_tfidf()
 
         return self._tfidf_score
+
+    tfidf = property(get_tfidf_score)
