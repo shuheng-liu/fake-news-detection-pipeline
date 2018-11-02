@@ -99,7 +99,7 @@ class DocumentSequence:
     def _set_tagged(self): 
     def _set_dictionary(self):
     def _set_bow(self):
-	# getters
+	# getters (exposed)
     def get_dictionary(self):  # property field `dictionary` available
     def get_tokenized(self):  # property field `tokenized` available
     def get_tagged(self):  # property field `tagged` available
@@ -116,7 +116,7 @@ class DocumentEmbedder:
     def _set_naive_doc2vec(self, normalizer='l2'):
     def _set_tfidf(self):
     def _set_onehot(self, scorer='tfidf'):
-
+    # getters (exposed)
     def get_onehot(self, scorer='tfidf'):  # property `onehot` available
     def get_doc2vec(self, vectors_size=300, window=5, min_count=5, dm=1, epochs=20):  # property doc2vec available
     def get_naive_doc2vec(self, normalizer='l2'):  # property `naive_doc2vec` available
