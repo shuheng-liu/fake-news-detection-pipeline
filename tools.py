@@ -132,7 +132,7 @@ def get_onehot_arr(place, dim, put_value=1.):
     get a `dim` dimensional one-hot vector, with `place`-th entry being `put_value` and dtype being np.float32
     e.g.:
         >>> get_onehot_arr(3, 5, 1.3)
-        <<< np.ndarray([0, 0, 0, 1.3, 0], dtype=np.float32)
+        np.ndarray([0, 0, 0, 1.3, 0], dtype=np.float32)
     :param place: the place to put a non-zero value
     :param dim: the length of the vector
     :param put_value: the value to be put
