@@ -117,10 +117,10 @@ class DocumentEmbedder:
     def _set_tfidf(self): ...
     def _set_onehot(self, scorer='tfidf'): ...
     # getters (exposed)
-    def get_onehot(self, scorer='tfidf'): ...  # property `onehot` available
-    def get_doc2vec(self, vectors_size=300, window=5, min_count=5, dm=1, epochs=20): ... # property doc2vec available
-    def get_naive_doc2vec(self, normalizer='l2'): ...  # property `naive_doc2vec` available
-    def get_tfidf_score(self): ...  # property `tfidf` available
+    def get_onehot(self, scorer='tfidf'): ...  # property field `onehot` available
+    def get_doc2vec(self, vectors_size=300, window=5, min_count=5, dm=1, epochs=20): ... # property field doc2vec available
+    def get_naive_doc2vec(self, normalizer='l2'): ...  # property field `naive_doc2vec` available
+    def get_tfidf_score(self): ...  # property field `tfidf` available
 ```
 
 
