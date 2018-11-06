@@ -1,10 +1,5 @@
 import os
 import sys
-import inspect
-# since PYTHONPATH does not necessarily include ROOTDIR (parent path of this file), we need the following 3 lines
-currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parentdir = os.path.dirname(currentdir)
-sys.path.insert(0, parentdir)  # so that we can load EmbeddingLoader
 import argparse
 import heapq
 import pandas as pd
