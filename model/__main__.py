@@ -1,5 +1,4 @@
 import os
-import sys
 import argparse
 import heapq
 import pandas as pd
@@ -95,7 +94,7 @@ if __name__ == '__main__':
         print("There is no such file, double check that you have a `model/{}.py`".format(opt.classifier))
         print("If you have checked and the problem persist, make sure to run this script from ROOTDIR instead of "
               "ROOTDIR/model, your code should look like `python model/hypertune.py ...`")
-        sys.exit(0)
+        raise e
 
     # get the model from the target file
     try:
@@ -104,7 +103,7 @@ if __name__ == '__main__':
         print(e)
         print("There is no `model` attribute in `model/{}.py`".format(opt.classifier))
         print("Make sure to include a variable named `model` in your file")
-        sys.exit(0)
+        raise e
 
     # get the hyperparameters to be trained
     try:
@@ -113,7 +112,7 @@ if __name__ == '__main__':
         print(e)
         print("There is no `param_dist` attribute in `model/{}.py`".format(opt.classifier))
         print("Make sure to include a variable named `param_dist` in your file")
-        sys.exit(0)
+        raise e
 
     verbose = opt.cv * opt.n_iter
     searcher = RandomizedSearchCV(model, param_distributions=param_dist, n_iter=opt.n_iter, scoring='f1', cv=opt.cv,
