@@ -9,7 +9,7 @@ import argparse
 import heapq
 import pandas as pd
 import pickle as pkl
-from embedding_loader import EmbeddingLoader
+from embedding_utils import EmbeddingLoader
 from sklearn.model_selection import RandomizedSearchCV, train_test_split
 from sklearn.model_selection._search import BaseSearchCV
 

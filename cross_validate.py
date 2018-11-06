@@ -1,7 +1,7 @@
 import numpy as np
 from model.hypertuned_models import classifiers
 from sklearn.model_selection import cross_val_score, train_test_split
-from embedding_loader import EmbeddingLoader
+from embedding_utils import EmbeddingLoader
 
 loader = EmbeddingLoader("pretrained")
 emb = loader.get_d2v(corpus="concat", win_size=23, epochs=500)

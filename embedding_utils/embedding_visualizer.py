@@ -66,7 +66,7 @@ def visualize_embeddings(embedding_values, label_values, embedding_name="doc_vec
 
 
 if __name__ == '__main__':
-    from embedding_loader import EmbeddingLoader
+    from .embedding_loader import EmbeddingLoader
     import pandas as pd
 
     loader = EmbeddingLoader("embeddings")
