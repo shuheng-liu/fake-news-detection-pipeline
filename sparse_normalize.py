@@ -2,7 +2,7 @@ import numpy as np
 import argparse
 import pickle as pkl
 from scipy.sparse import csr_matrix
-from tools import normalized
+from doc_utils import normalized
 
 
 def normalize_sparse_matrix(csr):

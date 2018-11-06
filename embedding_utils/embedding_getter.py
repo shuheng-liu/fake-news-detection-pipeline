@@ -3,7 +3,7 @@ import numpy as np
 import argparse
 import pickle as pkl
 import os
-from tools import DocumentEmbedder, DocumentSequence
+from doc_utils import DocumentEmbedder, DocumentSequence
 from nltk.corpus import stopwords
 from string import punctuation
 
