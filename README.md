@@ -91,7 +91,7 @@ git checkout f7e1c41
 
 ## Infrastructure for Embeddings
 
-The following classes `DocumentSequence` and `DocumentEmbedder` can be found in tools.py. We encapsulated different ways of computing embeddings (doc2vec, naive doc2vec, one-hot) and their choices of hyperparameters in these files. Below is a snapshot of these classes their methods.
+The following classes `DocumentSequence` and `DocumentEmbedder` can be found in sub-package `doc_utils/`. Different ways of computing embeddings (doc2vec, naive doc2vec, one-hot) and their choices of hyperparameters are encapsulated in these files. Below is a snapshot of these classes their methods.
 ```python
 class DocumentSequence:
     def __init__(self, raw_docs, clean=False, sw=None, punct=None): ...
