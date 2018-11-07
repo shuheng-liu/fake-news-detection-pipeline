@@ -1,4 +1,4 @@
-## migrated from [this repo](https://github.com/Johnny-Wish/fake-news-group2-project)
+## migrated from [this repo](https://github.com/Johnny-Wish/fake-news-group2-project) of mine
 # Table of Contents
 - [Fake News Detection Pipeline](#fake-news-detection-pipeline)
   * [Collaborators Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang ](#collaborators-shuheng-liu-qiaoyi-yin-yuyuan-fang)
