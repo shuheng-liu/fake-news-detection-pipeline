@@ -57,7 +57,7 @@ class EnsembleVoter:
 
 if __name__ == '__main__':
     from hypertuned_models import mlp, lg, svc, qda
-    from embedding_loader import EmbeddingLoader
+    from embedding_utils import EmbeddingLoader
     from sklearn.model_selection import train_test_split
 
     loader = EmbeddingLoader("../pretrained/")
