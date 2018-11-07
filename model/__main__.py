@@ -88,31 +88,32 @@ if __name__ == '__main__':
 
     # import the target file
     try:
-        module = __import__(opt.classifier)
+        module = __import__("model." + opt.classifier)
+        module = getattr(module, opt.classifier)
     except ModuleNotFoundError as e:
-        print(e)
         print("There is no such file, double check that you have a `model/{}.py`".format(opt.classifier))
         print("If you have checked and the problem persist, make sure to run this script from ROOTDIR instead of "
-              "ROOTDIR/model, your code should look like `python model/hypertune.py ...`")
+              "ROOTDIR/model, your command should look like `python -m model ...`")
         raise e
+    print("Successfully imported module {}".format(module))
 
     # get the model from the target file
     try:
         model = getattr(module, "model")
     except AttributeError as e:
-        print(e)
         print("There is no `model` attribute in `model/{}.py`".format(opt.classifier))
         print("Make sure to include a variable named `model` in your file")
         raise e
+    print("Successfully obtained model {}".format(model))
 
     # get the hyperparameters to be trained
     try:
         param_dist = getattr(module, "param_dist")
     except AttributeError as e:
-        print(e)
         print("There is no `param_dist` attribute in `model/{}.py`".format(opt.classifier))
         print("Make sure to include a variable named `param_dist` in your file")
         raise e
+    print("Successfully obtained param_dist {}".format(param_dist))
 
     verbose = opt.cv * opt.n_iter
     searcher = RandomizedSearchCV(model, param_distributions=param_dist, n_iter=opt.n_iter, scoring='f1', cv=opt.cv,
