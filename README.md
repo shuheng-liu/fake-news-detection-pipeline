@@ -147,7 +147,7 @@ raw_title = df['title'].values
 df['label'] = df['label'].apply(lambda label: 1 if label == "FAKE" else 0)
 
 # build two instances for preprocessing raw data
-from tools import DocumentSequence
+from doc_utils import DocumentSequence
 texts = DocumentSequence(raw_text, clean=True, sw=stopwords.words('english'), punct=punctuation)
 titles = DocumentSequence(raw_title, clean=True, sw=stopwords.words('english'), punct=punctuation)
 
@@ -234,10 +234,10 @@ strategy: DBOW, epochs: {200, 500}; all four combinations tried
 
 
 ```python
-from tools import DocumentEmbedder
+from doc_utils import DocumentEmbedder
 
 try:
-    from embedding_loader import EmbeddingLoader
+    from embedding_utils import EmbeddingLoader
 
     loader = EmbeddingLoader("pretrained/")
     news_embeddings = loader.get_d2v("concat", vec_size=300, win_size=23, min_count=5, dm=0, epochs=500)
@@ -264,7 +264,7 @@ except FileNotFoundError as e:
 
 
 ```python
-from embedding_visualizer import visualize_embeddings
+from embedding_utils import visualize_embeddings
 
 # visualize the news embeddings in the graph
 # MUST run in command line "tensorboard --logdir visual/" and visit localhost:6006 to see the visualization
