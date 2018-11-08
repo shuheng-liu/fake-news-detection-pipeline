@@ -1,6 +1,5 @@
-## migrated from [this repo](https://github.com/Johnny-Wish/fake-news-group2-project) of mine
-
 # Fake News Detection Pipeline
+## migrated from [this repo](https://github.com/Johnny-Wish/fake-news-group2-project) of mine
 ## Collaborators Shuheng Liu, Qiaoyi Yin, Yuyuan Fang
 
 Group project materials for fake news detection at Hollis Lab, GEC Academy
