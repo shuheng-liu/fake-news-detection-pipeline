@@ -1,4 +1,14 @@
 ## migrated from [this repo](https://github.com/Johnny-Wish/fake-news-group2-project) of mine
+
+# Fake News Detection Pipeline
+## Collaborators Shuheng Liu, Qiaoyi Yin, Yuyuan Fang
+
+Group project materials for fake news detection at Hollis Lab, GEC Academy
+
+## Project Plan
+
+![a](resources/GEC%20Group%20Presentation.jpg)
+
 # Table of Contents
 - [Fake News Detection Pipeline](#fake-news-detection-pipeline)
   * [Collaborators Shuheng Liu, Qiaoyi Yin, Yuyuan  Fang ](#collaborators-shuheng-liu-qiaoyi-yin-yuyuan-fang)
@@ -24,16 +34,6 @@
     + [TF-IDF](#tf-idf)
     + [Feature Ranking with Logistic Coefficients](#feature-ranking-with-logistic-coefficients)
     + [Ensemble Learning](#ensemble-learning)
-
-
-# Fake News Detection Pipeline
-## Collaborators Shuheng Liu, Qiaoyi Yin, Yuyuan Fang
-
-Group project materials for fake news detection at Hollis Lab, GEC Academy
-
-## Project Plan
-
-![a](resources/GEC%20Group%20Presentation.jpg)
 
 # Notice for Collaborators
 ## Doing Train-Test Split
