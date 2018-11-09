@@ -16,6 +16,7 @@ Group project materials for fake news detection at Hollis Lab, GEC Academy
   * [URL for Different Embeddings Precomputed on Cloud](#url-for-different-embeddings-precomputed-on-cloud)
   * [Hypyertuning Logs, Codes, and Stats](#hypyertuning-logs-codes-and-stats)
 - [Quick Walkthrough (Presentation)](#quick-walkthrough-presentation)
+  * [Archived Version of This Project](#archived-version-of-this-project)
   * [Infrastructure for Embeddings](#infrastructure-for-embeddings)
   * [Embedding Computation](#embedding-computation)
     + [URLs](#urls)
@@ -74,6 +75,7 @@ The logs, codes, and stats of hypertuning all simple models (that is, excluding 
 
 
 # Quick Walkthrough (Presentation)
+## Archived Version of This Project
 *Below is the final presentation, originally implemented in jupyter notebook. To see the original presentation file, checkout the following command in your terminal*
 
 ```bash
